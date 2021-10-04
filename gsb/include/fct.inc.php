@@ -20,11 +20,39 @@ function estConnecte(){
  * @param $nom
  * @param $prenom
  */
-function connecter($id,$nom,$prenom){
+function connecter($id,$nom,$prenom,$role){
 	$_SESSION['idVisiteur']= $id; 
 	$_SESSION['nom']= $nom;
 	$_SESSION['prenom']= $prenom;
+	$_SESSION['role']= convertRole($role);
 }
+
+function convertRole(String $r) : String {
+	switch ($r) {
+		case 'ADM':
+			return "Admin";
+			break;
+		case 'MED':
+			return "Medecin";
+			break;
+		case 'COM':
+			return "Commercial";
+			break;
+		case 'STG':
+			return "Stagiaire";
+			break;
+		case 'SEC':
+			return "Secretaire";
+			break;
+		case 'CPT':
+			return "Comptable";
+			break;
+		default:
+			return null;
+			break;
+	}
+}
+
 /**
  * Détruit la session active
  */

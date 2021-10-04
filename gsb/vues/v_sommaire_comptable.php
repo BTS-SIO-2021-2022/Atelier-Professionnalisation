@@ -9,7 +9,7 @@
       </div>  
         <ul id="menuList">
 			<li>
-				  Visiteur : <?php echo $_SESSION['prenom']."  ".$_SESSION['nom'] ?>
+               <?php echo $_SESSION['role'] ." : " .$_SESSION['prenom']."  ".$_SESSION['nom'] ?>
 			</li>
          <li>
             <b>============================</b>
